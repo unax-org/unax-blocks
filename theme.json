@@ -1,0 +1,28 @@
+{
+	"version": 1,
+	"settings": {
+		"color": {
+			"gradients": [],
+			"link": true,
+			"palette": [
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				},
+			]
+		},
+		"spacing": {
+			"customPadding": true
+		},
+		"typography": {
+			"customLineHeight": true,
+			"fontFamilies": [],
+			"fontSizes": []
+		},
+		"layout": {
+			"contentSize": "840px",
+			"wideSize": "1100px"
+		}
+	}
+}
