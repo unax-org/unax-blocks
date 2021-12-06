@@ -19,7 +19,26 @@ if ( ! function_exists( 'unax_blocks_support' ) ) :
 		add_theme_support( 'custom-units' );
 
 		// Enqueue editor styles.
-		add_editor_style( 'dist/editor-style.css' );
+		add_editor_style( 'dist/css/editor-style.css' );
+
+		// Register two nav menus
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Navigation', 'blockbase' ),
+				'social' => __( 'Social Navigation', 'blockbase' )
+			)
+		);
+
+		// Add support for core custom logo.
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 192,
+				'width'       => 192,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 	}
 	add_action( 'after_setup_theme', 'unax_blocks_support' );
 endif;
@@ -28,12 +47,11 @@ endif;
  * Enqueue scripts and styles.
  */
 function unax_blocks_scripts() {
-	// Enqueue normalize.
-	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/assets/css/normalize.css', array(), '8.0.1' );
+	// Normalize.
+	wp_enqueue_style( 'normalize', get_template_directory_uri() . '/dist/css/normalize.css', array(), '8.0.1' );
 
 	// Enqueue theme stylesheet.
-	wp_enqueue_style( 'unax-blocks-style', get_template_directory_uri() . '/style.css', array( 'normalize' ), wp_get_theme()->get( 'Version' ) );
-
+	wp_enqueue_style( 'unax-blocks', get_template_directory_uri() . '/style.css', array( 'normalize' ), wp_get_theme()->get( 'Version' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'unax_blocks_scripts' );

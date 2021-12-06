@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+/*--------------------------------------------------------------
+# Reboot
+--------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html {
+  line-height: var(--wp--custom--line-height--sm);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(var(--wp--preset--color--black), 0); }
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  height: 0;
+  overflow: visible; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: var(--wp--custom--margin--heading-bottom); }
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--wp--custom--margin--paragraph-bottom); }
+
+/*--------------------------------------------------------------
+# Defaults
+--------------------------------------------------------------*/
+/*
+ * text-underline-offset doesn't work in Chrome at all 👎
+ * But looks nice in Safari/Firefox, so let's keep it and
+ * maybe Chrome will support it soon.
+ */
+a {
+  cursor: pointer;
+  text-underline-offset: 3px;
+  -webkit-text-decoration-skip-ink: all;
+          text-decoration-skip-ink: all; }
+
+.container, .container-fluid {
+  margin: 0 auto;
+  padding: 0 15px; }
+
+.container {
+  max-width: 100%; }
+
+/* Small screen */
+@media only screen and (min-width: 576px) {
+  .container {
+    max-width: var(--wp--custom--container-max-widths--sm); } }
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: var(--wp--custom--container-max-widths--md); } }
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+  html {
+    line-height: var(--wp--custom--line-height--lg); }
+  .container, .container-fluid {
+    padding: 0; }
+  .container {
+    max-width: var(--wp--custom--container-max-widths--lg); } }
+
+/* Large screen */
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: var(--wp--custom--container-max-widths--xl); } }
+
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Templates
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Parts
+--------------------------------------------------------------*/
+.site-header {
+  padding: 10px 0; }
+  .site-header > .wp-block-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .site-header h1 {
+    margin: 0;
+    line-height: 1; }
+    .site-header h1 a {
+      text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */
