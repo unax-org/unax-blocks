@@ -2,7 +2,7 @@
 # Templates
 --------------------------------------------------------------*/
 .page-template-full-width {
-    .wp-block-post-content > * {
+    .wp-block-post-content > *:not(.container) {
         max-width: 100%;
     }
 }
