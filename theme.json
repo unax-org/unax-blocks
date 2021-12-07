@@ -12,32 +12,32 @@
 			"palette": [
 				{
 					"slug": "primary",
-					"color": "#007bff",
+					"color": "#5a6a23",
 					"name": "Primary"
 				},
 				{
 					"slug": "secondary",
-					"color": "#6c757d",
+					"color": "#eaf1c5",
 					"name": "Secondary"
 				},
 				{
 					"slug": "success",
-					"color": "#28a745",
+					"color": "#438b3c",
 					"name": "Success"
 				},
 				{
 					"slug": "danger",
-					"color": "#dc3545",
+					"color": "#ec5300",
 					"name": "Danger"
 				},
 				{
 					"slug": "warning",
-					"color": "#ffc107",
+					"color": "#ffb605",
 					"name": "Warning"
 				},
 				{
 					"slug": "info",
-					"color": "#17a2b8",
+					"color": "#82d7e1",
 					"name": "Info"
 				},
 				{
