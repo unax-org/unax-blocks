@@ -32,11 +32,13 @@ function unax_blocks_setup()  {
  	// Enqueue editor styles.
  	add_editor_style( 'dist/css/editor-style.css' );
 
- 	// Register two nav menus
+ 	// Register nav menus
  	register_nav_menus(
  		array(
- 			'primary' => __( 'Primary Navigation', 'blockbase' ),
- 			'social' => __( 'Social Navigation', 'blockbase' )
+            'primary' => __( 'Primary Navigation', 'unax-blocks' ),
+            'mobile' => __( 'Mobile Navigation', 'unax-blocks' ),
+            'footer-1' => __( 'Footer Navigation 1', 'unax-blocks' ),
+ 			'footer-2' => __( 'Footer Navigation 2', 'unax-blocks' )            
  		)
  	);
 
