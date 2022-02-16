@@ -1,11 +1,43 @@
 <?php
 /**
- * Functions
- *
- * @package Unax Blocks
+ * Leaderland functions
  */
 
-require_once get_template_directory() . '/inc/customizer.php';
-require_once get_template_directory() . '/inc/template-functions.php';
-require_once get_template_directory() . '/inc/template-hooks.php';
-require_once get_template_directory() . '/inc/widgets/class-unax-blocks-contacts-widget.php';
+require_once 'inc/template-functions.php';
+require_once 'inc/template-hooks.php';
+
+
+/**
+ * Register group block style.
+ */
+register_block_style(
+    'core/group',
+    array(
+        'name'         => 'container',
+        'label'        => __( 'Container', 'twentytwentytwo-child' ),
+    )
+);
+
+
+/**
+ * Register group columns style.
+ */
+register_block_style(
+    'core/row',
+    array(
+        'name'         => 'container',
+        'label'        => __( 'Container', 'twentytwentytwo-child' ),
+    )
+);
+
+
+/**
+ * Register group columns style.
+ */
+register_block_style(
+    'core/columns',
+    array(
+        'name'         => 'container',
+        'label'        => __( 'Container', 'twentytwentytwo-child' ),
+    )
+);

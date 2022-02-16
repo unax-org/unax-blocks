@@ -1,64 +1,100 @@
 <?php
 /**
- * Template Functions
- *
- * @package Unax Blocks
+ * Template functions
  */
+
 
 /**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function unax_blocks_setup()  {
+* Sets up theme defaults and registers support for various WordPress features.
+*
+* @return void
+*/
+function leaderland_support() {
+	// Add support for block styles.
+	add_theme_support( 'wp-block-styles' );
 
- 	// Adding support for featured images.
- 	add_theme_support( 'post-thumbnails' );
-
- 	// Adding support for core block visual styles.
- 	add_theme_support( 'wp-block-styles' );
-
- 	// Adding support for responsive embedded content.
- 	add_theme_support( 'responsive-embeds' );
-
- 	// Add support for editor styles.
- 	add_theme_support( 'editor-styles' );
-
- 	// Add support for custom units.
- 	add_theme_support( 'custom-units' );
-
- 	// Enqueue editor styles.
- 	add_editor_style( 'dist/css/editor-style.css' );
-
- 	// Register nav menus
- 	register_nav_menus(
- 		array(
-            'primary' => __( 'Primary Navigation', 'unax-blocks' ),
-            'mobile' => __( 'Mobile Navigation', 'unax-blocks' ),
-            'footer-1' => __( 'Footer Navigation 1', 'unax-blocks' ),
- 			'footer-2' => __( 'Footer Navigation 2', 'unax-blocks' )            
- 		)
- 	);
-
- 	// Add support for core custom logo.
- 	add_theme_support(
- 		'custom-logo',
- 		array(
- 			'height'      => 192,
- 			'width'       => 192,
- 			'flex-width'  => true,
- 			'flex-height' => true,
- 		)
- 	);
+	// Enqueue editor styles.
+	add_editor_style( 'style.css' );
 }
 
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue styles.
+ *
+ * @return void
  */
-function unax_blocks_scripts() {
+function leaderland_styles() {
+	// Register theme stylesheet.
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	$version_string = is_string( $theme_version ) ? $theme_version : false;
+	wp_register_style(
+		'leaderland-style',
+		get_template_directory_uri() . '/assets/css/theme.min.css',
+		array(),
+		$version_string
+	);
+
+	// Add styles inline.
+	wp_add_inline_style( 'leaderland-style', leaderland_get_font_face_styles() );
+
 	// Enqueue theme stylesheet.
-	wp_enqueue_style( 'unax-blocks', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get( 'Version' ) );
+	wp_enqueue_style( 'leaderland-style' );
+}
+
+
+/**
+ * Enqueue editor styles.
+ *
+ * @return void
+ */
+function leaderland_editor_styles() {
+	// Add styles inline.
+	wp_add_inline_style( 'wp-block-library', leaderland_get_font_face_styles() );
+}
+
+
+/**
+ * Get font face styles.
+ * Called by functions leaderland_styles() and leaderland_editor_styles() above.
+ *
+ * @return string
+ */
+function leaderland_get_font_face_styles() {
+	return "
+	@font-face{
+		font-family: 'Source Serif Pro';
+		font-weight: 200 900;
+		font-style: normal;
+		font-stretch: normal;
+		font-display: swap;
+		src: url('" . get_theme_file_uri( 'assets/fonts/SourceSerif4Variable-Roman.ttf.woff2' ) . "') format('woff2');
+	}
+
+	@font-face{
+		font-family: 'Source Serif Pro';
+		font-weight: 200 900;
+		font-style: italic;
+		font-stretch: normal;
+		font-display: swap;
+		src: url('" . get_theme_file_uri( 'assets/fonts/SourceSerif4Variable-Italic.ttf.woff2' ) . "') format('woff2');
+	}
+	";
+}
+
+
+/**
+ * Preloads the main web font to improve performance.
+ *
+ * Only the main web font (font-style: normal) is preloaded here since that font is always relevant (it is used
+ * on every heading, for example). The other font is only needed if there is any applicable content in italic style,
+ * and therefore preloading it would in most cases regress performance when that font would otherwise not be loaded
+ * at all.
+ *
+ * @return void
+ */
+function leaderland_preload_webfonts() {
+	?>
+	<link rel="preload" href="<?php echo esc_url( get_theme_file_uri( 'assets/fonts/SourceSerif4Variable-Roman.ttf.woff2' ) ); ?>" as="font" type="font/woff2" crossorigin>
+	<?php
 }

@@ -1,0 +1,158 @@
+/* Container */
+.container, .container-fluid, .is-style-container {
+	margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.container, .is-style-container {
+    max-width: 100%;
+}
+
+/* Small screen */
+@media only screen and ( min-width: 576px ) {
+    .container, .is-style-container {
+        max-width: 540px;
+    }
+}
+
+/* Tablet */
+@media only screen and ( min-width: 768px ) {
+    .container, .is-style-container {
+        max-width: 720px;
+    }
+}
+
+/* Desktop */
+@media only screen and ( min-width: 992px ) {
+    .container, .container-fluid, .is-style-container {
+        padding: 0;
+    }
+    .container, .is-style-container {
+        max-width: 960px;
+    }
+}
+
+/* Large screen */
+@media only screen and ( min-width: 1200px ) {
+    .container, .is-style-container {
+        max-width: 1140px;
+    }
+}
+
+/* Large screen */
+@media only screen and ( min-width: 1200px ) {
+	.wp-site-blocks > * > .alignwide,
+	main > .wp-block-group > .alignwide,
+	.wp-block-template-part .alignwide,
+	.wp-block-media-text.alignwide,
+	.woocommerce .wp-site-blocks > .wp-block-group,
+	.woocommerce .woocommerce-breadcrumb,
+	.woocommerce div.product {
+	    max-width: 1140px !important;
+	}
+}
+
+.page-template-page-full-width > *:not(.wp-block-post-title),
+.page-template-page-full-width > .entry-content > *:not(.wp-block-group) {
+    max-width: 100% !important;
+}
+
+.site-main {
+    min-height: 600px;
+}
+
+.page-template-page-full-width-no-title .wp-site-blocks > main.wp-block-group,
+.page-template-page-full-width .entry-content > .wp-block-cover,
+.page-template-page-full-width-no-title .entry-content > .wp-block-cover {
+    margin-top: 0;
+}
+
+/* Header */
+header.wp-block-template-part {
+	padding-bottom: 10px;
+	color: var( --wp--preset--color--white );
+	background-color: var( --wp--preset--color--black );
+
+	a {
+		color: inherit;
+	}
+}
+
+.wp-site-blocks .alignfull,
+body .wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 15px;
+	padding-right: 15px;
+
+	@media only screen and ( min-width: 1200px ) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.yoast-breadcrumbs {
+    padding-left: 15px;
+    padding-right: 15px;
+	font-size: var(--wp--preset--font-size--normal);
+}
+
+@media only screen and (min-width: 1200px ) {
+    .yoast-breadcrumbs {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+    background-color: #fff;
+    clip: auto !important;
+    -webkit-clip-path: none;
+    clip-path: none;
+    color: #777;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* Display options. */
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-flex {
+    display: flex;
+}

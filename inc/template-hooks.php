@@ -1,13 +1,9 @@
 <?php
 /**
- * Template hooks.
- *
- * @package Unax
+ * Template hooks
  */
 
-// Theme setup.
-add_action( 'after_setup_theme', 'unax_blocks_setup' );
-add_action( 'wp_enqueue_scripts', 'unax_blocks_scripts' );
-
-// Customizer.
-add_action( 'customize_register', 'unax_blocks_customize_register' );
+add_action( 'after_setup_theme', 'leaderland_support' );
+add_action( 'wp_enqueue_scripts', 'leaderland_styles' );
+add_action( 'admin_init', 'leaderland_editor_styles' );
+add_action( 'wp_head', 'leaderland_preload_webfonts' );

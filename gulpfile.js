@@ -56,11 +56,11 @@ gulp.task( 'scripts', function() {
       gulp.src( scripts, { allowEmpty: true } )
         .pipe( concat( 'index.min.js' ) )
         .pipe( uglify() )
-        .pipe( gulp.dest( `${paths.dist}/js` ) );
+        .pipe( gulp.dest( paths.js ) );
 
       return gulp.src( scripts, { allowEmpty: true } )
           .pipe( concat( 'index.js' ) )
-          .pipe( gulp.dest( `${paths.dist}/js` ) );
+          .pipe( gulp.dest( paths.js ) );
 
 });
 
@@ -80,13 +80,13 @@ gulp.task( 'sass', function() {
         .pipe( sass( { errLogToConsole: true } ) )
         .pipe( autoprefixer( 'last 2 versions' ) )
         .pipe( sourcemaps.write( `./` ) )
-        .pipe( gulp.dest( `${paths.dist}/css` ) );
+        .pipe( gulp.dest( paths.css ) );
 
 });
 
 gulp.task( 'minifycss', function() {
 
-  return gulp.src( `style.css` )
+  return gulp.src( `${paths.css}/theme.css` )
     .pipe( sourcemaps.init( { loadMaps: true } ) )
     .pipe( cleanCSS( { compatibility: '*' } ) )
     .pipe( plumber( {
@@ -97,7 +97,7 @@ gulp.task( 'minifycss', function() {
         } ) )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( sourcemaps.write( `./` ) )
-    .pipe( gulp.dest( `${paths.dist}/css` ) );
+    .pipe( gulp.dest( paths.css ) );
 
 });
 

@@ -1,23 +1,23 @@
 {
   "browserSyncOptions" : {
-    "proxy": "http://wordpress.local/",
+    "proxy": "http://localhost/unax/",
     "notify": true
   },
   "browserSyncWatchFiles" : [
     "./*.min.css",
-    "./dist/js/*.min.js",
+    "./assets/*.min.js",
     "./sass/**/*.scss",
     "./**/*.php"
   ],
   "paths" : {
-    "js": "./js",
-    "css": "./",
+    "js": "./assets/js",
+    "css": "./assets/css",
     "fonts": "./fonts",
-    "img": "./img",
+    "img": "./assets/img",
 	"imgsrc": "./src/img",
     "sass": "./sass",
     "src": "./src",
-    "dist": "./dist",
+    "dist": "./assets",
     "node": "./node_modules/",
     "vendor": ""
   }

@@ -1,16 +1,13 @@
-@charset "UTF-8";
 /*
-Theme Name: Unax Blocks
-Theme URI: https://unax.org/unax-blocks-theme
-Author: Atanas Antonov
-Description: Full Site Editing Block Theme
-Requires at least: 5.3
-Tested up to: 5.5
+Theme Name: Leaderland
+Author: Unax
+Author URI: https://unax.org/
+Description: Leaderland custom theme based on Leaderland theme introduced in WordPress 5.9.
+Requires at least: 5.9
+Tested up to: 5.9
 Requires PHP: 5.6
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: unax-blocks
+Text Domain: leaderland
 */
-
-@import "dist/css/style.css";
